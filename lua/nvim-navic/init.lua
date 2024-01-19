@@ -367,7 +367,7 @@ function M.attach(client, bufnr)
 		group = navic_augroup,
 		buffer = bufnr,
 	})
-	vim.api.nvim_create_autocmd("CursorHold", {
+	vim.api.nvim_create_autocmd( { "CursorHold", "CursorHoldI" }, {
 		callback = function()
 			lib.update_context(bufnr)
 		end,
