@@ -265,7 +265,7 @@ function M.request_symbol(for_buf, handler, client, file_uri, retry_count)
 		return
 	end
 
-	client.request("textDocument/documentSymbol", { textDocument = textDocument_argument }, function(err, symbols, _)
+	client:request("textDocument/documentSymbol", { textDocument = textDocument_argument }, function(err, symbols, _)
 		if symbols == nil then
 			if vim.api.nvim_buf_is_valid(for_buf) then
 				handler(for_buf, {})
